@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Music Website Sign Up</title>
+    <script>
+        function signUpUser() {
+            var userName = document.getElementById('user_name').value;
+            var userEmail = document.getElementById('user_email').value;
+            var userPassword = document.getElementById('user_password').value;
+            var userRePassword = document.getElementById('user_re_password').value;
+
+            // Perform client-side validation
+            if (userName.trim() === '' || userEmail.trim() === '' || userPassword.trim() === '' || userRePassword.trim() === '') {
+                alert('Please fill in all the fields.');
+                return;
+            }
+
+            if (userPassword !== userRePassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            // Redirect to welcome.html
+            window.location.href = 'welcome.html';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="left_bx1">
+            <div class="content">
+                <h3>Sign Up</h3>
+                <form method="post" action="welcome.html">
+                    <div class="card">
+                        <label for="name">Name</label>
+                        <input type="text" id="user_name" placeholder="Enter Your Username..." required>
+                    </div>
+                    <div class="card">
+                        <label for="email">Email</label>
+                        <input type="email" id="user_email" placeholder="Enter Your Email..." required>
+                    </div>
+                    <div class="card">
+                        <label for="password">Password</label>
+                        <input type="password" id="user_password" placeholder="Enter Your Password..." required>
+                    </div>
+                    <div class="card">
+                        <label for="re-password">Re-Password</label>
+                        <input type="password" id="user_re_password" placeholder="Enter Your Re-Password..." required>
+                    </div>
+                    <button type="button" class="submit" onclick="signUpUser()">Sign Up</button>
+                    <div class="check">
+                        <input type="checkbox" name="" id=""><span>Remember Me </span>
+                    </div>
+                    <p>Already have an account? <a href="welcome.html">Login</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="right_bx1">
+            <img src="login_png.jpg" alt="">
+        </div>
+    </header>
+</body>
+
+</html>
